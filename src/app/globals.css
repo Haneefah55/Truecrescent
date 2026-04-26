@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+
+  html{
+  overflow-y: scroll;
+  }
+  html::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: oklch(83.7% 0.128 66.29);
+    border-radius: 5px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(83.7% 0.128 66.29) black;
+  }
+
+
+}
+
+
