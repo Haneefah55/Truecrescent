@@ -5,10 +5,15 @@
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
+:root {
+  --font-outfit: 'Outfit', sans-serif
+}
+
 @layer base {
 
   html{
-  overflow-y: scroll;
+  overflow-y: auto;
+ 
   }
   html::-webkit-scrollbar {
     width: 6px;
@@ -24,12 +29,39 @@
   }
 
   html {
-    scroll-behavior: smooth;
+  
     scrollbar-width: thin;
     scrollbar-color: oklch(83.7% 0.128 66.29) black;
   }
 
 
+
 }
 
+.moveup{
+  animation: moveUp 2s linear;
+}
 
+.showup {
+  animation: showup 1s ease-in;
+}
+
+@keyframes moveUp {
+    from {
+    transform: translateY(50px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes showup {
+    from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
