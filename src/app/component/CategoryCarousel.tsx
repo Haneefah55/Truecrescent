@@ -38,7 +38,7 @@ const CategoryCarousel = () => {
         {
           categories.map((cat) => (
             <Link href={cat.href} key={cat.name} >
-              <div className='relative w-62.5 h-45 rounded-2xl shadow-md overflow-hidden group cursor-pointer'>
+              <div className='relative w-62.5 h-45 shadow-md overflow-hidden group cursor-pointer'>
                 <Image
                   src={cat.img}
                   alt={cat.name}
@@ -61,10 +61,10 @@ const CategoryCarousel = () => {
         }
 
         </div>
-        <button onClick={() => scroll("left")} className='absolute left-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-white/70 hover:bg-white focus:bg-white -translate-y-1/2'>
+        <button onClick={() => scroll("left")} className='absolute left-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-orange-500/80  hover:bg-orange-500  -translate-y-1/2'>
           <FaChevronLeft />
         </button>
-        <button onClick={() => scroll("right")} className='absolute right-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-white/70 hover:bg-white focus:bg-white -translate-y-1/2'>
+        <button onClick={() => scroll("right")} className='absolute right-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-orange-500/80 hover:bg-orange-500 -translate-y-1/2'>
           <FaChevronLeft />
         </button>
 

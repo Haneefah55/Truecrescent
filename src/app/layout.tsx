@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: 'https://truecrescent.vercel.app',
     siteName: 'True Crescent Enterprises Limited ',
     title: 'True Crescent Enterprises Limited  - Quality Steel Construction Materials',
-    description: 'Premium steel products for construction in Lagos. Shop rods, angles, beams, and sheets with local delivery.',
+    description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
     images: [{
       url: '/images/og-home.png',
       width: 1200,
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'True Crescent Enterprises Limited  - Quality Steel Construction Materials',
     description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
-    images: ['/images/og-home.jpg'],
+    images: ['/images/og-home.png'],
     creator: 'True Crescent Enterprises Limited',
   },
   verification: {
@@ -110,7 +110,7 @@ export default function RootLayout({
       <body className=""
       
       >
-        <Navbar />
+        
         {children}
       </body>
     </html>

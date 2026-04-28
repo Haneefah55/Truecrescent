@@ -25,8 +25,9 @@ const Navbar = () => {
   return (
     <div className='fixed  top-0 left-0 z-50 bg-gray-50 shadow-gray-600 shadow-md flex w-full items-center py-4 px-5 md:px-8 items- justify-between '>
       <Link href={'/'} className='flex items-center justify-center gap-1.5'>
-        <Image src={`/images/logo.png`} width={50} height={50} alt='true crescent logo'/>
-        <span className='font-semibold text-md md:text-xl'>True Crescent</span>
+        <Image src={`/images/logo.png`} className='object-contain' priority 
+        width={50} height={50} alt='true crescent logo'/>
+        <span className='font-semibold text-md md:text-lg'>True Crescent</span>
 
       </Link>
       {/* desktop nav */}
