@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Navbar from "../app/component/Navbar"
+import Navbar from "../component/Navbar"
 import localFont from 'next/font/local'
+import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = localFont({
   src: [
@@ -110,8 +111,12 @@ export default function RootLayout({
       <body className=""
       
       >
+        <ClerkProvider>
+          <Navbar />
+          {children}
+        </ClerkProvider>
         
-        {children}
+        
       </body>
     </html>
   );

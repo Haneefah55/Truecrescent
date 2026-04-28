@@ -1,17 +1,18 @@
 "use client"
 
+import { syncUser } from '@/actions/user.action'
+import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 
 const Navbar = () => {
   const path = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const user = false
-  //console.log(path)
+
   const linkRef = useRef(null)
   const navLinks = [
     { name: "Home", href: '/'},
@@ -20,6 +21,14 @@ const Navbar = () => {
     { name: "Products", href: '/products'},
     { name: "Contact", href: '/contact'},
   ]
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await syncUser()
+      console.log("synced user data", user)
+    }
+    fetchUser()
+  }, [])
 
 
   return (
@@ -49,12 +58,25 @@ const Navbar = () => {
       </button>
 
       <div>
-        {
-          !user &&
-          <Link href={'/login'} className='py-2 px-4 bg-slate-950 text-orange-400' >
-            Login
-          </Link>
-        }
+        <Show when="signed-out">
+          <div className='flex items-center gap-2 justify-center'>
+            <SignInButton mode='modal'>
+              <button className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
+                Login
+              </button>
+            </SignInButton>
+            <div className='w-0.5 h-4 bg-slate-950'/>
+            <SignUpButton mode='modal'>
+              <button className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
+                Sign Up
+              </button>
+            </SignUpButton>
+          </div>
+          
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
 
       </div>
 
