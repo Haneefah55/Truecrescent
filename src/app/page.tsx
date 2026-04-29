@@ -98,7 +98,7 @@ export default function Home() {
       {/* what we do section */}
 
       <div className="w-full h-fit bg-gray-200 py-5 flex items-center justify-center px-6">
-        <div className="mb-6 w-full flex justify-center gap-6 border-2 border-black max-w-6xl md:gap-4 lg:gap-7 flex-col min-[850]:flex-row ">
+        <div className="mb-6 w-full flex justify-center gap-6 max-w-6xl md:gap-4 lg:gap-7 flex-col min-[850]:flex-row ">
           <div className="flex items-center justify-center  flex-col">
             <div className="flex items-center justify-center">
               <h3 className=" text-slate-950  text-5xl md:text-7xl font-bold">What

@@ -1,6 +1,7 @@
 "use client"
 
 import { syncUser } from '@/actions/user.action'
+import { useAuthStore } from '@/store/auth.store'
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 const Navbar = () => {
   const path = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { checkAuth } = useAuthStore()
 
   const linkRef = useRef(null)
   const navLinks = [
@@ -23,11 +25,7 @@ const Navbar = () => {
   ]
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const user = await syncUser()
-      console.log("synced user data", user)
-    }
-    fetchUser()
+    checkAuth()
   }, [])
 
 

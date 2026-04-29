@@ -9,7 +9,7 @@ const HomeHero = () => {
 
   return (
     <div className="w-full min-h-screen relative bg-no-repeat bg-cover" style={{ backgroundImage: `url(${'/images/herobg.jpg'})` }}>
-      <div className="absolute inset-0 flex flex-col px-6 bg-linear-to-r from-black/95 via-black/50 to-transparent justify-center md:px-16">
+      <div className="absolute inset-0 flex flex-col px-6 bg-linear-to-r from-black/85 via-black/50 to-transparent justify-center md:px-16">
         <div className='moveup mt-36 relative  ' onAnimationEnd={() => setShowButton(true)}>
           <h4 className='text-gray-100 font-thin  mb-1 text-md '>Quality. Strength. Reliability </h4>
           <h4 className='text-gray-100 font-semibold mb-3 text-3xl md:text-4xl'>Trusted Premium Quality Steel</h4>
