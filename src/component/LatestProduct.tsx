@@ -33,7 +33,7 @@ const LatestProduct = () => {
         <div ref={scrollRef} className="flex gap-6 overflow-x-auto px-4 snap-mandatory scroll-smooth scrollbar-hide">
           {
             products.map((prod) => (
-              <div key={prod.name} className='w-90 h-60 shadow-md overflow-hidden group cursor-pointer flex flex-col border bg-gray-100'>
+              <div key={prod.name} className='min-w-65 w-90 h-60 shadow-md overflow-hidden group cursor-pointer flex flex-col border bg-gray-100'>
                 <div className='w-full h-3/4 relative'>
                   <Image
                     src={prod.img}
