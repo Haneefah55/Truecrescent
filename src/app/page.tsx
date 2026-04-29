@@ -6,6 +6,7 @@ import { FaBus, FaCog, FaHeadset, FaTruck } from "react-icons/fa";
 import CategoryCarousel from "../component/CategoryCarousel";
 import Image from "next/image";
 import Link from "next/link";
+import LatestProduct from "@/component/LatestProduct";
 
 
 
@@ -143,6 +144,10 @@ export default function Home() {
         </div> 
 
       </div>
+
+      {/* new product section */}
+
+      <LatestProduct />
 
 
         

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import { FaChevronLeft } from 'react-icons/fa'
+import { FaChevronRight } from 'react-icons/fa6'
 
 const CategoryCarousel = () => {
 
@@ -65,7 +66,7 @@ const CategoryCarousel = () => {
           <FaChevronLeft />
         </button>
         <button onClick={() => scroll("right")} className='absolute right-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-orange-500/80 hover:bg-orange-500 -translate-y-1/2'>
-          <FaChevronLeft />
+          <FaChevronRight />
         </button>
 
       </div>
