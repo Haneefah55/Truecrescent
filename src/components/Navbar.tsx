@@ -61,17 +61,17 @@ const Navbar = () => {
       <div>
         <Show when="signed-out">
           <div className='flex items-center gap-2 justify-center'>
-            <SignInButton mode='modal'>
-              <button className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
+       
+              <Link href='/login' className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
                 Login
-              </button>
-            </SignInButton>
+              </Link>
+           
             <div className='w-0.5 h-4 bg-slate-950'/>
-            <SignUpButton mode='modal'>
-              <button className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
+         
+              <Link href='/signup' className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
                 Sign Up
-              </button>
-            </SignUpButton>
+              </Link>
+        
           </div>
           
         </Show>

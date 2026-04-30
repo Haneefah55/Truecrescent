@@ -3,7 +3,11 @@ import React from 'react'
 
 const LoginPage = () => {
   return (
-    <SignIn />
+    <div className='flex items-center justify-center mt-5'>
+      <SignIn />
+    </div>
+
+    
   )
 }
 

@@ -36,6 +36,7 @@ const outfit = localFont({
 })
 
 
+
 export const metadata: Metadata = {
   // Basic metadata
   title: {
@@ -110,7 +111,7 @@ export const metadata: Metadata = {
     siteName: 'True Crescent',
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'True Crescent Steel Building Materials',
@@ -125,7 +126,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'True Crescent - Steel & Construction Materials Nigeria',
     description: 'Quality steel building and construction materials supplier in Nigeria.',
-    images: ['/images/twitter-image.png'],
+    images: ['/twitter-image.png'],
   },
   
   // Robots
@@ -143,8 +144,8 @@ export const metadata: Metadata = {
   
   // Icons
   icons: {
-    icon: '/favicon/favicon-32x32.png',
-    shortcut: '/favicon/favicon-16x16.png',
+    icon: '/favicon-32x32.png',
+    shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
   
@@ -177,10 +178,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(outfit.className, "font-sans", geist.variable)} data-scroll-behavior = "smooth">
     <head>
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
     </head>
       <body className=""
       

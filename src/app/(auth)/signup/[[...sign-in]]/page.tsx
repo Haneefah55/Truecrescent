@@ -3,7 +3,9 @@ import React from 'react'
 
 const SignupPage = () => {
   return (
-    <SignUp />
+    <div className='flex items-center justify-center mt-5'>
+          <SignUp />
+    </div>
   )
 }
 

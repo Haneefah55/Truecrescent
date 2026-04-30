@@ -24,7 +24,7 @@ export const syncUser = async () => {
         clerkId: userId,
     })
 
-    console.log("newly created user", user)
+    console.log("newly created user")
 
    /*  const userInfo = {
       id: user._id.toString(),

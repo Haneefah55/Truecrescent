@@ -7,6 +7,7 @@ import CategoryCarousel from "../../components/CategoryCarousel";
 import Image from "next/image";
 import Link from "next/link";
 import LatestProduct from "@/components/LatestProduct";
+import WhyChooseUsPage from "@/components/WhyChooseUs";
 
 
 export default function Home() {
@@ -143,9 +144,15 @@ export default function Home() {
 
       </div>
 
+      {/* why choose us section */}
+
+      <WhyChooseUsPage />
+
       {/* new product section */}
 
       <LatestProduct />
+
+
 
 
         
