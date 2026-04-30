@@ -1,20 +1,15 @@
 
-import { HiCheckBadge } from "react-icons/hi2";
+
 import HomeHero from "../../components/HomeHero";
 import { HiBadgeCheck } from "react-icons/hi";
-import { FaBus, FaCog, FaHeadset, FaTruck } from "react-icons/fa";
+import { FaCog, FaHeadset, FaTruck } from "react-icons/fa";
 import CategoryCarousel from "../../components/CategoryCarousel";
 import Image from "next/image";
 import Link from "next/link";
 import LatestProduct from "@/components/LatestProduct";
 
 
-
-
 export default function Home() {
-
-  
-
   
   return (
     <div className="w-full overflow-x-hidden">

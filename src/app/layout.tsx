@@ -36,20 +36,99 @@ const outfit = localFont({
 })
 
 
-// app/layout.tsx
 export const metadata: Metadata = {
-  metadataBase: new URL('https:truecrescent.vercel.app'),
-  title:  'True Crescent | Quality Steel Construction Materials in Lagos, Nigeria',
-  description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
-  keywords: ['steel construction materials Lagos', 'steel rods Nigeria', 'building materials Ikeja', 'steel beams Lekki', 'steel fabrication', 'structural steel supplier', 'steel erection services', 'quality construction materials', 'best steel connstruction materials', 'steel building materials Nigeria', 'steel supplier Nigeria', 'steel construction materials Lagos', 'steel rods Nigeria', 'building materials lagos', 'steel beams nigeria', 'steel fabrication', 'structural steel supplier', 'steel erection services', 'quality construction materials', 'best steel connstruction materials', 'steel building materials Nigeria', 'steel supplier Nigeria'],
+  // Basic metadata
+  title: {
+    default: 'True Crescent - Quality Steel Building & Construction Materials Nigeria',
+    template: '%s | True Crescent'
+  },
+  description: 'Leading supplier of steel building materials and construction products in Nigeria. Offering reinforcing bars, roofing sheets, structural steel, cement, and building supplies. Quality guaranteed, competitive prices.',
+  
+  // Keywords for SEO (still supported by some search engines)
+  keywords: [
+    'steel building materials Nigeria',
+    'construction materials supplier',
+    'reinforcing bars',
+    'roofing sheets Nigeria',
+    'structural steel',
+    'building supplies Lagos',
+    'steel construction company',
+    'True Crescent',
+    'steel building materials Nigeria',
+    'construction materials supplier',
+    'reinforcing bars',
+    'roofing sheets Nigeria',
+    'structural steel',
+    'building supplies Lagos',
+    'steel construction company',
+    'True Crescent',
+    'construction company',
+    'building materials',
+    'construction services',
+    'construction company near me',
+    'building contractor',
+    'commercial construction',
+    'civil engineering',
+    'construction firms',
+    'construction contractors',
+    'construction management',
+    'construction project management',
+    'construction engineering',
+    'construction companies in Nigeria',
+    'building materials supplier',
+    'steel supplier Nigeria',
+    'construction materials Lagos',
+    'steel building materials Nigeria',
+    'construction materials supplier',
+    'reinforcing bars',
+    'roofing sheets Nigeria',
+    'structural steel',
+    'building supplies Lagos',
+    'steel construction company',
+    'True Crescent',
+    'cost of steel rods in Nigeria',
+    'best steel for warehouse construction',
+    'how much is steel per ton in Nigeria',
+    'advantages of steel buildings',
+    'steel vs concrete construction'
+  ],
   authors: [{ name: 'True Crescent Enterprises Limited' }],
   creator: 'True Crescent',
   publisher: 'True Crescent Lagos',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: true,
+  // URL metadata
+  metadataBase: new URL('https://truecrescent.com.ng'),
+  alternates: {
+    canonical: '/',
   },
+  
+ 
+  // Open Graph (Facebook, LinkedIn)
+  openGraph: {
+    title: 'True Crescent - Steel & Construction Materials Supplier Nigeria',
+    description: 'Quality steel building materials and construction supplies. From reinforcing bars to roofing sheets, we deliver excellence across Nigeria.',
+    url: 'https://truecrescent.com.ng',
+    siteName: 'True Crescent',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'True Crescent Steel Building Materials',
+      },
+    ],
+    locale: 'en_NG',
+    type: 'website',
+  },
+  
+  // Twitter Card
+  twitter: {
+    card: 'summary_large_image',
+    title: 'True Crescent - Steel & Construction Materials Nigeria',
+    description: 'Quality steel building and construction materials supplier in Nigeria.',
+    images: ['/images/twitter-image.png'],
+  },
+  
+  // Robots
   robots: {
     index: true,
     follow: true,
@@ -61,38 +140,29 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  openGraph: {
-    type: 'website',
-    locale: 'en_NG',
-    url: 'https://truecrescent.vercel.app',
-    siteName: 'True Crescent Enterprises Limited ',
-    title: 'True Crescent Enterprises Limited  - Quality Steel Construction Materials',
-    description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
-    images: [{
-      url: '/images/og-home.png',
-      width: 1200,
-      height: 630,
-      alt: 'True Crescent Enterprises Limited  - Quality Steel Construction Materials'
-    }],
+  
+  // Icons
+  icons: {
+    icon: '/favicon/favicon-32x32.png',
+    shortcut: '/favicon/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'True Crescent Enterprises Limited  - Quality Steel Construction Materials',
-    description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
-    images: ['/images/og-home.png'],
-    creator: 'True Crescent Enterprises Limited',
+  
+  // Verification (Google Search Console)
+
+  
+  // Additional metadata
+  category: 'Construction Materials',
+  classification: 'Steel Building Materials Supplier',
+  
+  // Contact info for rich results
+  other: {
+    'contact:phone': '+2348160804480',
+    'contact:email': 'Go4elitesteel@gmail.com',
+    'business:hours': 'Mon-Sun 8am-6pm',
   },
-  verification: {
-    google: 'your-google-verification-code',
-    other: {
-      'facebook-domain-verification': 'your-facebook-code',
-    }
-  },
-  alternates: {
-    canonical: 'https://truecrescent.vercel.app',
-  },
-  category: 'steel construction and building materials',
-};
+}
+
 
 export const viewport: Viewport = {
   width: 'device-width',
