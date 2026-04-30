@@ -1,9 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Geist } from "next/font/google";
 import "./globals.css";
-import Navbar from "../component/Navbar"
+
 import localFont from 'next/font/local'
 import { ClerkProvider } from "@clerk/nextjs";
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const outfit = localFont({
   src: [
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https:truecrescent.vercel.app'),
   title:  'True Crescent | Quality Steel Construction Materials in Lagos, Nigeria',
   description: 'Buy premium steel construction and building materials in Lagos, Nigeria: rods, angles, beams, sheets. Fast delivery nationwide. Wholesale & retail available.',
-  keywords: ['steel construction materials Lagos', 'steel rods Nigeria', 'building materials Ikeja', 'steel beams Lekki', 'steel fabrication', 'structural steel supplier', 'steel erection services', 'quality construction materials', 'best steel connstruction materials', 'steel building materials Nigeria', 'steel supplier Nigeria'],
+  keywords: ['steel construction materials Lagos', 'steel rods Nigeria', 'building materials Ikeja', 'steel beams Lekki', 'steel fabrication', 'structural steel supplier', 'steel erection services', 'quality construction materials', 'best steel connstruction materials', 'steel building materials Nigeria', 'steel supplier Nigeria', 'steel construction materials Lagos', 'steel rods Nigeria', 'building materials lagos', 'steel beams nigeria', 'steel fabrication', 'structural steel supplier', 'steel erection services', 'quality construction materials', 'best steel connstruction materials', 'steel building materials Nigeria', 'steel supplier Nigeria'],
   authors: [{ name: 'True Crescent Enterprises Limited' }],
   creator: 'True Crescent',
   publisher: 'True Crescent Lagos',
@@ -101,7 +105,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={outfit.className} data-scroll-behavior = "smooth">
+    <html lang="en" className={cn(outfit.className, "font-sans", geist.variable)} data-scroll-behavior = "smooth">
     <head>
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -112,7 +116,7 @@ export default function RootLayout({
       
       >
         <ClerkProvider>
-          <Navbar />
+        
           {children}
         </ClerkProvider>
         

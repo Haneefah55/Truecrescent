@@ -1,16 +1,19 @@
 
 import { HiCheckBadge } from "react-icons/hi2";
-import HomeHero from "../component/HomeHero";
+import HomeHero from "../../components/HomeHero";
 import { HiBadgeCheck } from "react-icons/hi";
 import { FaBus, FaCog, FaHeadset, FaTruck } from "react-icons/fa";
-import CategoryCarousel from "../component/CategoryCarousel";
+import CategoryCarousel from "../../components/CategoryCarousel";
 import Image from "next/image";
 import Link from "next/link";
-import LatestProduct from "@/component/LatestProduct";
+import LatestProduct from "@/components/LatestProduct";
+
 
 
 
 export default function Home() {
+
+  
 
   
   return (

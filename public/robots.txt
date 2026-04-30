@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://truecrescent.com.ng
+
+# Sitemaps
+Sitemap: https://truecrescent.com.ng/sitemap.xml
