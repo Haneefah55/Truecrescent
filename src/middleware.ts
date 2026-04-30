@@ -2,9 +2,19 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])
 
+const isPublicRoute = createRouteMatcher([
+  '/', 
+  '/sitemap.xml',      // Explicitly allow your sitemap
+  '/robots.txt',       // Also good practice to allow this
+  '/sign-in(.*)',      // Keep your auth pages public
+  '/sign-up(.*)'
+])
+
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect()
+  if (isProtectedRoute(req) && !isPublicRoute(req)) await auth.protect()
 })
+
+
 
 export const config = {
   matcher: [
