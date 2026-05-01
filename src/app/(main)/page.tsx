@@ -146,7 +146,7 @@ export default function Home() {
 
       {/* why choose us section */}
 
-      <WhyChooseUsPage />
+      <WhyChooseUsPage color1={"oklch(70.5% 0.213 47.604)"} color2={"bg-orange-300"}  />
 
       {/* new product section */}
 

@@ -5,7 +5,7 @@ const mongoUri = process.env.MONGO_URI!
 export const connectDb = async () =>{
   try{
     const conn = await mongoose.connect(mongoUri)
-    console.log(`Mongodb connected. ${conn.connection.host}`)
+    console.log(`Mongodb connected.`)
   }catch(error: unknown){
     if (error instanceof Error) {
       console.log("error connecting to mongodb.",  error.message)

@@ -1,8 +1,8 @@
 "use client"
 
-import { syncUser } from '@/actions/user.action'
+
 import { useAuthStore } from '@/store/auth.store'
-import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { Show, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -11,12 +11,15 @@ import { FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa'
 import { MdDashboard } from 'react-icons/md'
 
 
+
 const Navbar = () => {
   const path = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { checkAuth, user } = useAuthStore()
 
-  console.log("user from navbar", user)
+  //console.log("user from navbar", user)
+  
+
 
   const linkRef = useRef(null)
   const navLinks = [
