@@ -72,6 +72,9 @@ const LatestProduct = () => {
         <button onClick={() => scroll("right")} className='absolute right-2 top-1/2 z-20 backdrop-blur-sm p-2 shadow-md bg-orange-500/80 hover:bg-orange-500 -translate-y-1/2'>
           <FaChevronRight />
         </button>
+        <Link href={'/products'} className='w-fit px-3 py-2 mt-3 bg-orange-500 hover:bg-orange-400 text-gray-100 font-medium self-center active:bg-orange-400 transition duration-300'>
+        View all products
+        </Link>
 
       </div>
         

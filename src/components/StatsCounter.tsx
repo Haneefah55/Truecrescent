@@ -8,8 +8,8 @@ import { FaTruck } from 'react-icons/fa6'
 
 const StatsCounter = () => {
    const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5
+    triggerOnce: false,
+    threshold: 0.3
 
   })
   const stats = [

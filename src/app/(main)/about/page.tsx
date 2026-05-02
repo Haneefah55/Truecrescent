@@ -1,10 +1,11 @@
+import CTABanner from '@/components/CTABanner'
 import StatsCounter from '@/components/StatsCounter'
 import WhyChooseUsPage from '@/components/WhyChooseUs'
 import { Rocket, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaShield } from 'react-icons/fa6'
+import { FaAward } from 'react-icons/fa'
 
 
 const AboutPage = () => {
@@ -31,15 +32,16 @@ const AboutPage = () => {
       <div className='w-full bg-gray-100 py-10 flex items-center justify-center '>
         <div className='grid grid-cols-1 md:grid-cols-2 w-full p-4 max-w-6xl gap-4 self-center'>
           <div className='flex flex-col items-center justify-center w-full '>
-            <h3 className='font-semibold text-left text-3xl mb-3 w-full '>Building Strong Foundations for Every Project</h3>
+            <h3 className='font-semibold text-left text-3xl mb-3 w-full max-w-110 '>Building Strong Foundations for Every Project</h3>
             <p className='w-full max-w-110'>At <strong>True Crescent Enterprises Limited</strong>, we specialize in premium steel building solutions and high-quality construction materials designed to meet the needs of residential, commercial, and industrial projects. With a commitment to durability, reliability, and customer satisfaction, we provide materials and services that help builders, contractors, and property owners complete projects with confidence.</p>
 
             <p className='w-full max-w-110 mt-2'>From structural steel to roofing sheets, pipes, cement, and other construction essentials, we are dedicated to delivering products that meet industry standards while maintaining competitive pricing and dependable service.</p>
 
           </div>
-          <div className='flex items-center justify-center border-2 w-full mt-9 md:mt-5 '>
+          <div className='flex items-center justify-center w-full mt-9 md:mt-5 '>
             <div className='w-95 min-w-70 relative h-75 self-center flex'>
-              <div className='w-50 min-w-40 z-30 h-50 absolute right-4 -top-2'>
+              <div className='w-50 h-50 absolute z-30 -left-5 -top-7 bg-slate-950'/>
+              <div className='w-90 min-w-70 z-30 h-85 min-h-70 absolute right-4 -top-2'>
                 <Image
                   src={'/images/are.jpeg'}
                   alt=''
@@ -47,20 +49,15 @@ const AboutPage = () => {
                   className='bg-cover'
 
                 />
-                <div className='absolute bg-black/30 inset-0'/>
+                <div className='absolute bg-black/0.5 inset-0'/>
+                <div className='absolute w-85 h-15 bg-slate-950 text-gray-100 z-20 bottom-7 left-7 flex p-4 items-center justify-center'>
+                  <FaAward  size={25} />
+                  <p className='text-xs ml-2'>Leading supplier of premium steel building and high-quality construction materials</p>
+                </div>
 
               </div>
-              <div className='w-50 min-w-40 z-30 h-55 min-h-50 absolute bg-pink-900 left-0 -bottom-5'>
-                <Image
-                  src={'/images/about.jpg'}
-                  alt=''
-                  fill
-                  className='object-cover'
 
-                />
-                <div className='absolute bg-black/30 inset-0'/>
-
-              </div>
+              
               
               
 
@@ -105,6 +102,8 @@ const AboutPage = () => {
       </div>
 
       <WhyChooseUsPage color1={"oklch(12.9% 0.042 264.695)"} color2={"bg-slate-600"} />
+
+      <CTABanner />
 
 
 
