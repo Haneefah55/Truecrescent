@@ -19,16 +19,17 @@ export default function Home() {
       <HomeHero />
 
       {/*  value propositions  */}
-      <div className="bg-gray-100 py-10 flex items-center justify-center flex-col md:flex-row" >
+      <div className="bg-gray-100 py-10 flex items-center justify-center flex-col" >
+        <h2 className="text-xl md:text-2xl font-semibold mb-4">Building & Construction Materials Magnate</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <div className="w-35 h-35 bg-orange-600 text-white p-2 flex flex-col items-center justify-center gap-3 hover:bg-orange-700 focus:bg-orange-700 transition duration-300 ">
             <HiBadgeCheck  size={35} color="white" />
-            <h3 className="font-medium text-sm">Premium Materials</h3>
+            <p className="font-medium text-sm">Premium Materials</p>
             <p className="font-light text-center text-xs">Certified mills. Every batch inspected.</p>
           </div>
           <div className="w-35 h-35 bg-orange-600 text-white p-2 flex flex-col items-center justify-center gap-3 hover:bg-orange-700 focus:bg-orange-700 transition duration-300  ">
             <FaCog  size={35} color="white" />
-            <h3 className="font-medium text-sm">Build to Last</h3>
+            <p className="font-medium text-sm">Build to Last</p>
             <p className="font-light text-center text-xs">High-grade steel for real job sites. </p>
           </div>
 
@@ -65,12 +66,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-5 py-7 ">
           <div className="grid grid-cols-1 min-[600px]:grid-cols-2 w-full  max-w-6xl">
             <div className="flex mb-6 w-full md:mb-0 self-center  justify-center sm:justify-start">
-              <h3 className=" text-gray-100 text-5xl md:text-7xl font-bold">Who
+              <p className=" text-gray-100 text-5xl md:text-7xl font-bold">Who
 
-              </h3>
-              <h3 className=" text-gray-100 ml-3 mt-7 md:mt-16 text-3xl md:text-5xl font-bold">We Are ?
+              </p>
+              <p className=" text-gray-100 ml-3 mt-7 md:mt-16 text-3xl md:text-5xl font-bold">We Are ?
 
-              </h3>
+              </p>
             </div> 
             <div className="w-full max-w-100 pb-5 h-auto mt-10 bg-orange-500">
               
@@ -79,7 +80,7 @@ export default function Home() {
               </p>
               
               <p className="text-gray-50 text-[16px] mb-4  p-4">
-                Our extensive product range includes structural steel, rebar, steel sheets, and custom fabrication services. We source our materials from trusted mills and ensure that every batch undergoes rigorous quality inspections.
+                Our extensive pjroduct range includes structural steel, rebar, steel sheets, and custom fabrication services. We source our materials from trusted mills and ensure that every batch undergoes rigorous quality inspections.
               </p>
               <Link href={'/about'} className="w-fit py-2 px-3 mt-10 ml-5  bg-slate-950 text-white hover:bg-transparent hover:border-2 transition duration-300 active:bg-transparent active:border-2">
                 Learn More
@@ -111,7 +112,7 @@ export default function Home() {
             <div  className="w-full max-w-100  pb-5 h-fit mt-10 text-white p-4 bg-slate-950">
               <p>At <strong>True Crescent Enterprises Limited</strong>, we provide reliable supply solutions for building, construction, and structural steel projects. We are dedicated to delivering quality materials that ensure strength, durability, and long-lasting performance.
               </p>
-              <p className="mt-3 mb-6">Whether you are handling residential, commercial, or industrial projects, we supply the essential materials needed to support successful construction.</p>
+              <p className="mt-3 mb-6">Beyond materials, we provide project management and contract management so you never deal with delayed shipments, missing clips and couplers, or mismatched steel grades. We handle welding and fabrication, installation and erection, plus on-site inspection and supervision to catch issues before they cost time and money.</p>
 
               <Link href={'/services'} className="w-fit py-2 px-3 bg-orange-500 text-white hover:bg-transparent hover:border-2 transition duration-300 active:bg-transparent active:border-2">
                 Learn More
@@ -124,7 +125,7 @@ export default function Home() {
           <div className="absolute inset-0 z-40 flex p-6 items-center justify-center flex-col ">
             <Image
             src={'/images/quality.png'}
-            alt="quality"
+            alt="qualityn steel construction materials in nigeria"
             width={50}
             height={50}
             />

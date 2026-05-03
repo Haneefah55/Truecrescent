@@ -39,60 +39,10 @@ const outfit = localFont({
 
 export const metadata: Metadata = {
   // Basic metadata
-  title: {
-    default: 'True Crescent - Quality Steel Building & Construction Materials Nigeria',
-    template: '%s | True Crescent'
-  },
-  description: 'Leading supplier of steel building materials and construction products in Nigeria. Offering reinforcing bars, roofing sheets, structural steel, cement, and building supplies. Quality guaranteed, competitive prices.',
+  title: 'True Crescent - Steel Construction Materials in Lagos | Quality Steel Building Materials in Nigeria',
+
+  description: 'Leading supplier of steel building materials and construction products in Nigeria. Offering reinforcing bars, roofing sheets, structural steel, cement, and building supplies. Quality guaranteed, competitive prices. We are a building and construction materials magnate serving contractors, developers, and project owners across Nigeria. With decades of experience in project development and contract management, we dont just supply materials—we ensure your project succeeds from ground break to final handover.',
   
-  // Keywords for SEO (still supported by some search engines)
-  keywords: [
-    'steel building materials Nigeria',
-    'construction materials supplier',
-    'reinforcing bars',
-    'roofing sheets Nigeria',
-    'structural steel',
-    'building supplies Lagos',
-    'steel construction company',
-    'True Crescent',
-    'steel building materials Nigeria',
-    'construction materials supplier',
-    'reinforcing bars',
-    'roofing sheets Nigeria',
-    'structural steel',
-    'building supplies Lagos',
-    'steel construction company',
-    'True Crescent',
-    'construction company',
-    'building materials',
-    'construction services',
-    'construction company near me',
-    'building contractor',
-    'commercial construction',
-    'civil engineering',
-    'construction firms',
-    'construction contractors',
-    'construction management',
-    'construction project management',
-    'construction engineering',
-    'construction companies in Nigeria',
-    'building materials supplier',
-    'steel supplier Nigeria',
-    'construction materials Lagos',
-    'steel building materials Nigeria',
-    'construction materials supplier',
-    'reinforcing bars',
-    'roofing sheets Nigeria',
-    'structural steel',
-    'building supplies Lagos',
-    'steel construction company',
-    'True Crescent',
-    'cost of steel rods in Nigeria',
-    'best steel for warehouse construction',
-    'how much is steel per ton in Nigeria',
-    'advantages of steel buildings',
-    'steel vs concrete construction'
-  ],
   authors: [{ name: 'True Crescent Enterprises Limited' }],
   creator: 'True Crescent',
   publisher: 'True Crescent Lagos',
@@ -144,7 +94,7 @@ export const metadata: Metadata = {
   
   // Icons
   icons: {
-    icon: '/favicon-32x32.png',
+    icon: '/favicon.png',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
