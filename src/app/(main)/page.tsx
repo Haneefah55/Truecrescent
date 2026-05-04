@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import LatestProduct from "@/components/LatestProduct";
 import WhyChooseUsPage from "@/components/WhyChooseUs";
+import CTABanner from "@/components/CTABanner";
+import Reviews from "@/components/Reviews";
 
 
 export default function Home() {
@@ -152,6 +154,10 @@ export default function Home() {
       {/* new product section */}
 
       <LatestProduct />
+
+      <CTABanner />
+
+      <Reviews />
 
 
 

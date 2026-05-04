@@ -69,6 +69,28 @@
     scrollbar-width: thin;
     scrollbar-color: oklch(83.7% 0.128 66.29) black;
   }
+  aside, main {
+
+    scrollbar-width: thin;
+    scrollbar-color: oklch(83.7% 0.128 66.29) #bbb;
+  }
+   main::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  main::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 5px;
+  }
+
+  aside::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  aside::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 5px;
+  }
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

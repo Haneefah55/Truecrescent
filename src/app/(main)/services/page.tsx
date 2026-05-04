@@ -11,7 +11,7 @@ import { FaBridge, FaBuildingWheat, FaHouse, FaHouseChimney, FaTruckFast } from 
 
 export const metadata: Metadata = {
   // Basic metadata
-  title: 'Our Services – Structural Steel Construction Materials, Scaffold Formwork Materials, Welding, Project Management ',
+  title: 'Our Services | Structural Steel Construction Materials | Scaffold Formwork Materials',
 
   description: ' Merchant dealer of steel, formwork, scaffolding. Plus welding, installation, erection, on-site inspection. Project management available..',
 
