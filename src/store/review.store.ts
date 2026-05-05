@@ -19,7 +19,7 @@ export const useReviewStore = create<ReviewState>((set) =>({
   reviews: [],
   getReviews: async () => {
     const response = await getReviews()
-    console.log(response)
+    //console.log(response)
     set({ reviews: response })
   }
   

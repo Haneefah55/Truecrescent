@@ -2,7 +2,7 @@ import { syncUser } from "@/actions/user.action";
 import { create } from "zustand";
 
 type User ={
-  id: string,
+  _id: string,
   clerkId: string
   email: string,
   username: string,

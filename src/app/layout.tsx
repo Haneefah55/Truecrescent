@@ -4,10 +4,7 @@ import "./globals.css";
 
 import localFont from 'next/font/local'
 import { ClerkProvider } from "@clerk/nextjs";
-import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const outfit = localFont({
   src: [
@@ -126,7 +123,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(outfit.className, "font-sans", geist.variable)} data-scroll-behavior = "smooth">
+    <html lang="en" className={`${outfit.className} font-sans`} data-scroll-behavior = "smooth">
     <head>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

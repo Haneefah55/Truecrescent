@@ -26,8 +26,8 @@ const Footer = () => {
     
   ]
   return (
-    <div className='w-full bottom-0 mt-10 flex relative bg-no-repeat bg-cover items-center justify-center' style={{ backgroundImage: `url(${'/images/herobg.jpg'})` }}>
-      <div className='pt-8 px-7 bg-slate-800/90 text-gray-100 flex flex-col items-center justify-between'>
+    <div className='w-full bottom-0 mt-10 flex relative bg-slate-900 items-center justify-center'>
+      <div className='pt-8 px-7 text-gray-100 flex flex-col items-center justify-between'>
         <div className='w-full relative flex items-center justify-center mb-4'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
               <div className='flex flex-col items-center justify-center'>

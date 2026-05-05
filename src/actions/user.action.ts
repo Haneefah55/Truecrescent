@@ -6,6 +6,7 @@ import { auth, currentUser } from "@clerk/nextjs/server"
 
 export const syncUser = async () => {
   try {
+    
     await connectDb()
     const currentuser = await currentUser()
     const { userId } = await auth()

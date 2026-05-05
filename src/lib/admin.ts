@@ -17,5 +17,5 @@ export const checkAdmin = async() => {
     redirect("/")
   }
 
-  return user
+  return JSON.parse(JSON.stringify(user))
 }
