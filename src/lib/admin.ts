@@ -1,4 +1,4 @@
-import User from "@/models/user.model"
+/* import User from "@/models/user.model"
 import { auth } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 
@@ -18,4 +18,4 @@ export const checkAdmin = async() => {
   }
 
   return JSON.parse(JSON.stringify(user))
-}
+} */

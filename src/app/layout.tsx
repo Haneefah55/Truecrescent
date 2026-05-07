@@ -132,9 +132,10 @@ export default function RootLayout({
       <body className=""
       
       >
-    
+        <ClerkProvider>
           <Toaster position="top-right" />
           {children}
+        </ClerkProvider>
         
         
       </body>
