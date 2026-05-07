@@ -1,4 +1,4 @@
-import { syncUser } from "@/actions/user.action";
+/* import { syncUser } from "@/actions/user.action";
 import { create } from "zustand";
 
 type User ={
@@ -25,4 +25,4 @@ export const useAuthStore = create<Authstate>((set) =>({
     console.log("result from syncUser in authStore", result)
     set({ user: result })
   }
-}))
+}))/*  */ 

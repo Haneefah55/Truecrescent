@@ -4,7 +4,7 @@ import User from "@/models/user.model"
 import { connectDb } from "@/lib/connectDb"
 import { auth, currentUser } from "@clerk/nextjs/server"
 
-export const syncUser = async () => {
+/* export const syncUser = async () => {
   try {
     
     await connectDb()
@@ -31,4 +31,4 @@ export const syncUser = async () => {
   } catch (error) {
     console.log("error in syncUser action", error)
   }
-}
+} */

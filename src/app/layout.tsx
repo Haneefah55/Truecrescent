@@ -35,7 +35,7 @@ const outfit = localFont({
 
 
 
-export const metadata: Metadata = {
+/* export const metadata: Metadata = {
   // Basic metadata
   title: 'True Crescent - Steel Construction Materials in Lagos | Quality Steel Building Materials in Nigeria',
 
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     'contact:email': 'Go4elitesteel@gmail.com',
     'business:hours': 'Mon-Sun 8am-6pm',
   },
-}
+} */
 
 
 export const viewport: Viewport = {
