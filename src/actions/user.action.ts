@@ -27,17 +27,6 @@ export const syncUser = async () => {
 
     console.log("newly created user")
 
-   /*  const userInfo = {
-      id: user._id.toString(),
-      clerkId: user.clerkId,
-      email: user.email,
-      username: user.username,
-      createdAt: user.createdAt.toISOString(),
-      role: user.role,
-      cartItems: user.cartItems,
-      wishlist: user.wishlist,
-      shippingAddress: user.shippingAddress,
-    } */
     return JSON.parse(JSON.stringify(user))
   } catch (error) {
     console.log("error in syncUser action", error)

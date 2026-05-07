@@ -15,7 +15,7 @@ import { MdDashboard } from 'react-icons/md'
 const Navbar = () => {
   const path = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { checkAuth, user } = useAuthStore()
+  const { user } = useAuthStore()
 
   //console.log("user from navbar", user)
   
@@ -30,9 +30,7 @@ const Navbar = () => {
     { name: "Contact", href: '/contact'},
   ]
 
-  useEffect(() => {
-    checkAuth()
-  }, [])
+
 
 
   return (
