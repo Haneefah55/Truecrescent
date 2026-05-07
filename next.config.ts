@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/:path*/',
-        destination: '/:path*',
+        destination: '/',
         permanent: true,
       },
     ]
