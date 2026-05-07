@@ -30,9 +30,6 @@ const Navbar = () => {
     { name: "Contact", href: '/contact'},
   ]
 
-
-
-
   return (
     <div className='fixed  top-0 left-0 z-50 bg-gray-50 shadow-gray-600 shadow-md flex w-full items-center py-4 px-5 md:px-8 items- justify-between '>
       <Link href={'/'} className='flex items-center justify-center gap-1.5'>
