@@ -11,7 +11,7 @@ import { FaBridge, FaBuildingWheat, FaHouse, FaHouseChimney, FaTruckFast } from 
 
 export const metadata: Metadata = {
   // Basic metadata
-  title: 'Our Services | Structural Steel Construction Materials | Scaffold Formwork Materials',
+  title: 'Structural Steel Construction Materials | Scaffold Formwork Materials',
 
   description: ' Merchant dealer of steel, formwork, scaffolding. Plus welding, installation, erection, on-site inspection. Project management available..',
 
@@ -66,9 +66,7 @@ export const metadata: Metadata = {
   
   // Icons
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon.ico',
   },
   
   // Verification (Google Search Console)

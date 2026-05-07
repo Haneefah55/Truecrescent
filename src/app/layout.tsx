@@ -4,6 +4,7 @@ import "./globals.css";
 
 import localFont from 'next/font/local'
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner"
 
 
 const outfit = localFont({
@@ -91,9 +92,8 @@ export const metadata: Metadata = {
   
   // Icons
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon.ico',
+
   },
   
   // Verification (Google Search Console)
@@ -125,16 +125,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.className} font-sans`} data-scroll-behavior = "smooth">
     <head>
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="manifest" href="/site.webmanifest" />
     </head>
       <body className=""
       
       >
         <ClerkProvider>
-        
+          <Toaster position="top-right" />
           {children}
         </ClerkProvider>
         

@@ -1,10 +1,12 @@
+
+import AddProductForm from '@/components/AddProductForm'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
 const AddProductPage = () => {
   return (
-    <div className='w-full '>
+    <div className='w-full max-w-3xl mx-auto flex flex-col gap-5 py-5'>
       <div className='flex gap-3 p-3 bg-gray-100 shadow-md'>
         <Link href={'/admin/product'}>
           <ArrowLeft size={18} />
@@ -26,7 +28,8 @@ const AddProductPage = () => {
         </div>
 
       </div>
-      <div className='flex gap-3 p-3 bg-gray-100 shadow-md'>
+      <div className='flex gap-3 p-3 bg-gray-100 shadow-md '>
+        <AddProductForm />
         
 
       </div>

@@ -97,9 +97,9 @@ export function Sidebar() {
   }, [isMobileScreen])
   return (
 
-    <aside className={`h-full  bg-white shrink-0 transition-transform  ${isOpen ? "translate-x-0 w-60 p-4" : "-translate-x-full w-0 p-0"}  rounded-tl-2xl rounded-bl-2xl overflow-y-auto overflow-x-hidden border-r-2 ${isMobileScreen ? "fixed inset-y-0 z-50 shadow-xl top-6" : "relative"}`}>
-      <div className={`${isMobileScreen ? "flex" : "hidden"} rounded-full h-5 w-5 p-2 items-center justify-center bg-orange-400 text-gray-100 absolute top-5 right-0`}>
-        <SideBarTriger Icon= {<FaChevronLeft size={12} />} />
+    <aside className={`h-full  bg-gray-100 shrink-0 transition-transform  ${isOpen ? "translate-x-0 w-60 p-4" : "-translate-x-full w-0 p-0"}  rounded-tl-2xl rounded-bl-2xl overflow-y-auto overflow-x-hidden border-r-2 ${isMobileScreen ? "fixed inset-y-0 z-50 shadow-xl top-6" : "relative"}`}>
+      <div className={`${isMobileScreen ? "flex" : "hidden"} rounded-full h-5 w-5 p-3 items-center justify-center bg-slate-900 text-gray-100 absolute top-16  right-2 shadow-lg`}>
+        <SideBarTriger Icon= {<FaChevronLeft size={14} />} />
       </div>
       <div className={`flex flex-col items-center `}>
         

@@ -10,7 +10,7 @@ import { FaAward } from 'react-icons/fa'
 
 export const metadata: Metadata = {
   // Basic metadata
-  title: 'About Us | Steel Building Materials | Steel Construction Solutions | True Crescent Enterprises Limited',
+  title: 'Steel Building Materials in Lagos, Nigeria | True Crescent Enterprises Limited',
 
   description: ' We deliver quality products, professional service, and durable solutions for every project. From reinforcing bars to roofing sheets, we are your trusted partner in construction materials across Nigeria.',
 
@@ -64,10 +64,9 @@ export const metadata: Metadata = {
   },
   
   // Icons
-  icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+   icons: {
+    icon: '/favicon.ico',
+
   },
   
   // Verification (Google Search Console)

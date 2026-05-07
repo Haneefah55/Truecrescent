@@ -73,7 +73,7 @@ const Footer = () => {
                 </p>
                 <p className='flex items-center justify-center gap-2'>
                   <FaLocationDot size={15} />
-                  <span>+2348160804480</span>
+                  <span className='text-sm'>Plot 4 Orowunmi Street Orile Iganmu Lagos State</span>
                 </p>
                 <p className='flex flex-col items-center mt-3 md:mt-0 justify-center gap-2'>
                   <FaQuestion size={15} className=''/>

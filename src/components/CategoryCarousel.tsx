@@ -9,11 +9,11 @@ import { FaChevronRight } from 'react-icons/fa6'
 const CategoryCarousel = () => {
 
   const categories = [
-    { name: "Steel & Structural Materials", href: '/category/steel-materials', img: '/images/cat1.jpg' },
-    { name: "Scaffolding & Formwork Materials", href: '/category/scaffolding-formwork', img: '/images/cat2.jpg' },
-    { name: "Roofing & Timber", href: '/category/roofing-timbers', img: '/images/cat3.jpg'},
-    { name: "Pipes & Fittings", href: '/category/pipes-fittings', img: '/images/cat4.avif'},
-    { name: "Fasteners & Accessories", href: '/category/assessories', img: '/images/cat5.webp'},
+    { name: "Steel & Structural Materials", href: '/category/steel-and-structural-materials', img: '/images/cat1.jpg' },
+    { name: "Scaffolding & Formwork Materials", href: '/category/scaffolding-and-formwork-materials', img: '/images/cat2.jpg' },
+    { name: "Roofing & Timber", href: '/category/roofing-and-timber', img: '/images/cat3.jpg'},
+    { name: "Pipes & Fittings", href: '/category/pipes-and-fittings', img: '/images/cat4.avif'},
+    { name: "Fasteners & Accessories", href: '/category/fasteners-and-accessories', img: '/images/cat5.webp'},
   ]
 
   const scrollRef = useRef<HTMLDivElement>(null)

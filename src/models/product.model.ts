@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import { models } from 'mongoose'
+import { string } from 'zod'
 
 const productSchema = new mongoose.Schema({
 
@@ -9,16 +10,14 @@ const productSchema = new mongoose.Schema({
   },
   spec: String,
   description: String,
-  price: Number,
-  discountedPrice: {
-    type: Number,
-    default: 0
-  },
-  images: {
+  imageUrls: {
     type: [String],
     default: [],
   },
-
+  imagePublicIds: {
+    type: [String],
+    default: [],
+  },
   review: [
     {
       user: {
@@ -46,7 +45,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  stock: Boolean,
+  stock: {
+    type: Boolean,
+    default: true
+  }
 
 }, { timestamps: true })
 
