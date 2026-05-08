@@ -1,4 +1,4 @@
-import { UserButton } from '@clerk/nextjs'
+
 import { Package2 } from 'lucide-react'
 import React from 'react'
 import { FaDollarSign, FaShoppingCart } from 'react-icons/fa'
