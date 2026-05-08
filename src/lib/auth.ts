@@ -5,11 +5,9 @@ import mongoose from 'mongoose'
 import { nextCookies } from 'better-auth/next-js'
 
 await connectDb()
-if(!mongoose.connection.db){
-  throw new Error ("database not connected")
-}
+
 export const auth = betterAuth({
-  database: mongodbAdapter(mongoose.connection.db),
+  database: mongodbAdapter(mongoose.connection.db!),
   emailAndPassword: {
     enabled: true,
     autoSignIn: false,
