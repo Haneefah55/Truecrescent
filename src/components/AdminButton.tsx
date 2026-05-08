@@ -7,7 +7,10 @@ const AdminButton = () => {
 
 
   return (
-    <UserButton />
+          
+    <button>
+      Admin
+    </button>
   )
 }
 
