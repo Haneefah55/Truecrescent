@@ -5,8 +5,7 @@ import DisableBodyScroll from '@/components/DisableBodyScroll'
 import { Sidebar } from '@/components/SideBar'
 import SideBarTriger from '@/components/SideBarTriger'
 
-//import { checkAdmin } from '@/lib/admin'
-import { currentUser } from '@clerk/nextjs/server'
+
 import { MdSpaceDashboard } from 'react-icons/md'
 
 const AdLayout = async ({ children }: { children: React.ReactNode }) => {

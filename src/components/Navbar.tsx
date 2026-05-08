@@ -1,8 +1,8 @@
 "use client"
 
 
+import { useAuthStore } from '@/store/auth.store'
 //import { useAuthStore } from '@/store/auth.store'
-import { Show, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -16,8 +16,8 @@ const Navbar = () => {
   const path = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  //console.log("user from navbar", user)
-  
+  const { user } = useAuthStore()
+  //console.log("user", user)
 
 
   const linkRef = useRef(null)
@@ -56,8 +56,10 @@ const Navbar = () => {
       </button>
 
       <div>
-        {/* <Show when="signed-out">
-          <div className='flex items-center gap-2 justify-center'>
+      {
+        !user &&
+
+        <div className='flex items-center gap-2 justify-center'>
        
               <Link href='/login' className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
                 Login
@@ -70,35 +72,31 @@ const Navbar = () => {
               </Link>
         
           </div>
+      }
           
-        </Show>
-
-        <Show when="signed-in">
-       {/*    {
-            user?.role === "admin" && (
+          
+        
+        {
+          user && user?.role === "admin" ? (
               <Link href={'/admin'} className='font-semibold text-shadow-slate-950 flex items-center justify-center gap-2 mr-3  hover:text-orange-500 transition duration-300 active:text-orange-500'>
                 <MdDashboard size={20}/> 
                 <span className='md:block hidden'>Dashboard</span>
               </Link>
-            )
-          } */}
-          {/* 
-            user?.role !== "admin" && (
+            ):  (
               <div className='flex items-center justify-center gap-3'>
                 <button  className='text-slate-950 transition duration-300 hover:text-orange-500 active:text-orange-500'>
                   <FaShoppingCart size={25} />
                 </button>
             
-                
-              
-                
-
               </div>
               
             )
-          } 
-          <UserButton />
-        </Show> */}
+        }
+          
+        
+       
+            
+         
 
       </div>
 

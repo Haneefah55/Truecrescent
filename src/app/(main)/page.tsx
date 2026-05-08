@@ -14,7 +14,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   // Basic metadata
-  title: 'True Crescent - Quality Steel Building Materials in Nigeria',
+  title: 'True Crescent - Steel Building Materials in Lagos',
 
   description: 'Leading supplier of steel building materials and construction products in Nigeria. Offering reinforcing bars, roofing sheets, structural steel, cement, and building supplies. Quality guaranteed, competitive prices. We are a building and construction materials magnate serving contractors, developers, and project owners across Nigeria. With decades of experience in project development and contract management, we dont just supply materials—we ensure your project succeeds from ground break to final handover.',
   

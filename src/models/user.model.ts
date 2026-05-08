@@ -21,41 +21,7 @@ const userSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  cartItems: [
-    {
-      quantity: {
-        type: Number,
-        default: 1,
-      },
-      
-      product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      }
-      
-    },
-  
-  ],
-
-  wishlist: [
-    {
-      product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product"
-      }
-    }
-
-  ],
-
-  shippingAddress: [
-    {
-      street: { type: String },
-      city:    { type: String },
-      state:   { type: String },
-      phoneNo: { type: Number },
-      zipCode: { type: String },
-    }
-  ],
+ 
 
   role: {
     type: String,
@@ -63,12 +29,7 @@ const userSchema = new mongoose.Schema({
     default: "customer"
   },
 
-  review: {
-    
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Review",
-    
-  }
+
 
 }, { timestamps: true })
 

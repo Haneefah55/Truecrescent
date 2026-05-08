@@ -2,33 +2,70 @@
 
 import User from "@/models/user.model"
 import { connectDb } from "@/lib/connectDb"
-import { auth, currentUser } from "@clerk/nextjs/server"
+import { auth } from "@/lib/auth"
+import { headers } from "next/headers"
+import { redirect } from "next/navigation"
 
-/* export const syncUser = async () => {
-  try {
-    
-    await connectDb()
-    const currentuser = await currentUser()
-    const { userId } = await auth()
-    
-    if (!currentuser || !userId) return
 
-    const userExist = await User.findOne({ clerkId: userId }).lean()
-    if (userExist) {
-      
-      return JSON.parse(JSON.stringify(userExist))
+
+export const signUp = async(email: string, password: string, name: string) =>{
+
+  const result = await auth.api.signUpEmail({
+    body:{
+      email,
+      password,
+      name,
+      callbackURL: '/'
     }
+  })
 
-    const user = await User.create({
-        username: currentuser.username || currentuser.emailAddresses[0].emailAddress.split("@")[0],
-        email: currentuser?.emailAddresses[0].emailAddress,
-        clerkId: userId,
-    })
+  return result
+}
 
-    console.log("newly created user")
+export const signIn = async(email: string, password: string) =>{
 
-    return JSON.parse(JSON.stringify(user))
-  } catch (error) {
-    console.log("error in syncUser action", error)
+  const result = await auth.api.signInEmail({
+    body:{
+      email,
+      password,
+      callbackURL: '/'
+    }
+  })
+
+  return result
+}
+
+export const signInGoogle = async(provider: "google") =>{
+
+  const { url } = await auth.api.signInSocial({
+    body:{
+      provider,
+      callbackURL: '/'
+    }
+  })
+
+  if(url) {
+    redirect(url)
   }
-} */
+
+}
+
+
+export const signOut = async() =>{
+
+  const result = await auth.api.signOut({
+    headers: await headers()
+  })
+
+  return result
+}
+
+export const getUser = async() => {
+  const result = await auth.api.getSession({
+    headers: await headers()
+  })
+
+  return result
+}
+
+

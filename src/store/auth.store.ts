@@ -1,28 +1,30 @@
-/* import { syncUser } from "@/actions/user.action";
+
+import { getUser } from "@/actions/user.action";
 import { create } from "zustand";
 
+
+
 type User ={
-  _id: string,
-  clerkId: string
+  name: string,
   email: string,
-  username: string,
+  emailVerified: boolean,
+  image?: string | null | undefined,
   createdAt: Date,
+  updatedAt: Date,
   role: string,
-  cartItems: [],
-  wishlist: [],
-  shippingAddress: [],
+  id: string,
 }
 
 type Authstate = {
-  user: User | null,
+  user: User | null | undefined,
   checkAuth: () => Promise<void>,
 }
 
 export const useAuthStore = create<Authstate>((set) =>({
   user: null,
   checkAuth: async () => {
-    const result = await syncUser()
+    const result = await getUser()
     console.log("result from syncUser in authStore", result)
-    set({ user: result })
+    set({ user: result?.user })
   }
 }))/*  */ 
