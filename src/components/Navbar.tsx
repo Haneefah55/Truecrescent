@@ -56,7 +56,7 @@ const Navbar = () => {
       </button>
 
       <div>
-        <Show when="signed-out">
+        {/* <Show when="signed-out">
           <div className='flex items-center gap-2 justify-center'>
        
               <Link href='/login' className='font-semibold text-sm hover:text-orange-500 transition duration-300 active:text-orange-500'>
@@ -96,9 +96,9 @@ const Navbar = () => {
               </div>
               
             )
-          } */}
+          } 
           <UserButton />
-        </Show>
+        </Show> */}
 
       </div>
 

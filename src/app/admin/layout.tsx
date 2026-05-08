@@ -13,10 +13,10 @@ const AdLayout = async ({ children }: { children: React.ReactNode }) => {
 
 
   //const admin = checkAdmin()
-  const user = await currentUser()
+ // const user = await currentUser()
   
 
-  
+  const user = "admin"
 
   return (
     <>
@@ -31,7 +31,7 @@ const AdLayout = async ({ children }: { children: React.ReactNode }) => {
               <SideBarTriger Icon= {<MdSpaceDashboard size={24} />} />
               <div>
                 <span className='font-medium'>Admin Dashboard</span>
-                <p className='text-sm'>Welcome back <strong className='ml-2 capitalize text-[16px]'>{user?.username}</strong></p>
+                <p className='text-sm'>Welcome back <strong className='ml-2 capitalize text-[16px]'>{user}</strong></p>
               </div>
              
 
