@@ -65,7 +65,7 @@ const Footer = () => {
                 <h3 className='text-2xl font-bold text-slate-300 '>Get in Touch</h3>
                 <p className='flex items-center justify-center gap-2'>
                   <Mail size={15} />
-                  <span>Go4elitesteel@mail.com</span>
+                  <span>Go4elitesteel@gmail.com</span>
                 </p>
                 <p className='flex items-center justify-center gap-2'>
                   <FaWhatsapp size={15} />

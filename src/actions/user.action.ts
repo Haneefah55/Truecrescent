@@ -68,4 +68,15 @@ export const getUser = async() => {
   return result
 }
 
+export const checkAdmin = async() => {
+  const result = await auth.api.getSession({
+    headers: await headers()
+  })
+
+  const user = result?.user
+  const isAdmin = user?.role === "admin"
+  
+  return {user, isAdmin}
+}
+
 
