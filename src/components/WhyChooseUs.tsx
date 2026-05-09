@@ -50,7 +50,7 @@ const WhyChooseUsPage = ({ color1, color2}: {color1: string, color2: string}) =>
             <div className='w-70 relative h-75 self-center mb-3 md:mb-0'>
               <div className={`w-70 h-75 absolute ${color2} left-5 top-5 `} />
               <Image
-                src={'/images/why.jpg'}
+                src={'/images/why.jpeg'}
                 alt='steel building construction materials | true crescent'
                 fill
               />
