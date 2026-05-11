@@ -41,8 +41,10 @@ const Navbar = () => {
   ]
 
   const handleLogout = async()=>{
-    await signOut()
+    const success = await signOut()
+    if(success){
     router.push('/login')
+    }
   }
 
   return (
@@ -135,7 +137,7 @@ const Navbar = () => {
         }
 
         <div className='border-t-2 border-gray-300 pt-5 flex w-full items-center justify-center'>
-          <button className=' flex font-semibold cursor-pointer'>
+          <button onClick={handleLogout} className=' flex font-semibold hover:text-orange-500 active:text-orange-500 cursor-pointer'>
             Logout
           </button>
           

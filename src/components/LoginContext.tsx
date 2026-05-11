@@ -2,18 +2,19 @@
 
 
 import { signIn, signInGoogle } from '@/actions/user.action'
+import { useAuthStore } from '@/store/auth.store'
 import { Eye, EyeOffIcon, Loader } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { toast } from 'sonner'
 
 const LoginContext = () => {
-
+  const router = useRouter()
+ 
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
-  const router = useRouter()
-  
 
   const handleLogin = async(formData: FormData) =>{
     setLoading(true)
@@ -21,22 +22,20 @@ const LoginContext = () => {
     const email= formData.get("email") as string
     const password= formData.get("password") as string
 
-    
-    
-    try {
-      const result = await signIn(email, password)
-      console.log("login res", result)
-      if(!result.user){
-        setError("Invalid email or password")
-      }
-
-      router.push('/')
-
-    } catch (error) {
-      setError(`Authentication error: ${ error instanceof Error ? error.message : "Unknown error"}`)
-    } finally {
+    const result = await signIn(email, password)
+  
+    if(!result.success){
+      setError(result.error)
       setLoading(false)
+      return
     }
+    toast.success('Login Successfully')
+    setTimeout(() => {
+      router.push('/')
+    }, 1000)
+
+    setLoading(false)
+    setError("")
 
 
 
@@ -48,9 +47,11 @@ const LoginContext = () => {
     try {
       await signInGoogle("google")
     } catch (error) {
-      
+      console.log(error)
     }
   }
+
+
 
   return (
     <div className='w-full mx-3 max-w-md bg-gray-100 h-auto rounded-xl my-10 md:my-0 shadow-md p-4 flex items-center justify-center'>

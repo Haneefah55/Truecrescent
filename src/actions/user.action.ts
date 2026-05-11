@@ -10,29 +10,45 @@ import { redirect } from "next/navigation"
 
 export const signUp = async(email: string, password: string, name: string) =>{
 
-  const result = await auth.api.signUpEmail({
-    body:{
-      email,
-      password,
-      name,
-      callbackURL: '/'
-    }
-  })
+  try {
+    const result = await auth.api.signUpEmail({
+      body:{
+        email,
+        password,
+        name,
+        callbackURL: '/login'
+      }
+    })
+    //console.log(result)
 
-  return result
+  return { success: true, data: result }
+  } catch (error: any) {
+    const response = error?.message
+    console.log("response", response)
+    return { success: false, error: response }
+    
+  }
+
+  
 }
 
 export const signIn = async(email: string, password: string) =>{
 
-  const result = await auth.api.signInEmail({
-    body:{
-      email,
-      password,
-      callbackURL: '/'
-    }
-  })
+  try {
+    const result = await auth.api.signInEmail({
+      body:{
+        email,
+        password,
+        callbackURL: '/'
+      }
+    })
 
-  return result
+    return { success: true, data: result }
+  } catch (error: any) {
+    const response = error?.message
+    console.log("response", response)
+    return { success: false, error: response }
+  }
 }
 
 export const signInGoogle = async(provider: "google") =>{
@@ -52,12 +68,17 @@ export const signInGoogle = async(provider: "google") =>{
 
 
 export const signOut = async() =>{
+  try {
+    const result = await auth.api.signOut({
+      headers: await headers()
+    })
 
-  const result = await auth.api.signOut({
-    headers: await headers()
-  })
+    return result
+  } catch (error) {
+    console.log(error)
+  }
 
-  return result
+  
 }
 
 export const getUser = async() => {

@@ -1,17 +1,25 @@
+"use server"
+
+import ContactForm from '@/components/ContactForm'
+import { auth } from '@/lib/auth'
 import { Clock1, Clock10, Mail, MailCheckIcon, MapPin, NotepadTextIcon } from 'lucide-react'
+import { headers } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 
-const ContactPage = () => {
+const ContactPage = async() => {
+
+  const session = await auth.api.getSession({
+    headers: await headers()
+  })
+
+  const user = session?.user
   return (
-    <div className='mt-10 flex flex-col bg-gray-50 w-full overflow-x-hidden'>
+    <div className='mt-10 flex flex-col bg-gray-200 w-full overflow-x-hidden'>
       <div className='flex h-30 sm:h-60 md:h-90 relative bg-no-repeat bg-contain lg:bg-cover ' style={{ backgroundImage: `url(${'/images/contact.png'})` }}>
         <div className='absolute inset-0 bg-black/30 flex' />
-
-        
-
       </div>
       <div className='flex items-center justify-center my-5'>
        <div className=' font-semibold text-3xl md:text-5xl'>Get In Touch
@@ -52,7 +60,7 @@ const ContactPage = () => {
 
       </div>
 
-      <div className=' flex my-10 w-full max-w-6xl px-6 flex-col md:flex-row items-center justify-center'>
+      <div className=' flex my-10 w-full max-w-6xl px-6 gap-5 flex-col md:flex-row items-center justify-center'>
         <div className='flex flex-col gap-4  '>
           <div className='flex flex-col items-start gap-3 shadow-md bg-slate-800/10 p-5 rounded-xl'>
             <a href='https://wa.me/2348160804480?text=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20products' target="_blank" rel="noopener noreferrer" className='flex items-center justify-center gap-3'>
@@ -110,9 +118,10 @@ For urgent requests, we recommend contacting us via WhatsApp for quicker communi
 
         </div>
 
-        <div className='flex items-center justify-center w-full mx-5 max-w-sm bg-gray-100 rounded-xl shadow-md p-5 flex-col gap-3'>
+        <div className='flex items-center justify-center w-full mx-5 max-w-sm bg-gray-100 rounded-xl shadow-md p-5 flex-col pb-10 gap-3'>
           <h3 className='text-2xl font-semibold '>Contact Us</h3>
           <p className='text-sm'>Fill out the form below and submit, we will get back to you shortly</p>
+          <ContactForm user={user}/>
 
 
         </div>

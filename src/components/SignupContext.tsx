@@ -1,11 +1,12 @@
 "use client"
 
 
-import { signIn, signInGoogle, signUp } from '@/actions/user.action'
+import {signInGoogle, signUp } from '@/actions/user.action'
+import { useAuthStore } from '@/store/auth.store'
 import { Eye, EyeOffIcon, Loader } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
 const SignupContext = () => {
@@ -16,7 +17,8 @@ const SignupContext = () => {
   const router = useRouter()
   
 
-  const handleLogin = async(formData: FormData) =>{
+  const handleSignup = async(formData: FormData) =>{
+
     setLoading(true)
     setError("")
     const name= formData.get("name") as string
@@ -24,27 +26,20 @@ const SignupContext = () => {
     const password= formData.get("password") as string
 
     
-    
-    try {
-      const result = await signUp(email, password, name)
-      console.log("signup res", result)
-      if(!result.user){
-        setError("Failed to create account")
-      }
-      toast.success('Accout Created Successfully; please login to continue')
-      setTimeout(() => {
-        router.push('/login')
-      }, 3500)
-
-    } catch (error) {
-      setError(`Authentication error: ${ error instanceof Error ? error.message : "Unknown error"}`)
-    } finally {
+    const result = await signUp(email, password, name)
+    console.log("signup res", result)
+    if(!result.success){
+      setError(result.error)
       setLoading(false)
+      return
     }
+    toast.success('Accout Created Successfully; please login to continue')
+    setTimeout(() => {
+      router.push('/login')
+    }, 3500)
 
-
-
-
+    setLoading(false)
+    setError("")
     
   }
 
@@ -55,6 +50,9 @@ const SignupContext = () => {
       
     }
   }
+  const { user, checkAuth } = useAuthStore()
+  
+  
 
   return (
     <div className='w-full mx-3 max-w-md bg-gray-100 h-auto rounded-xl my-10 shadow-md p-4 flex items-center justify-center'>
@@ -72,7 +70,7 @@ const SignupContext = () => {
           <p className='text-lg text-gray-500'>Or</p>
           <div className='bg-gray-500 h-0.5 w-30' />
         </div>
-        <form action={handleLogin}  className='w-full flex gap-3 mt-3 p-2 flex-col '>
+        <form action={handleSignup}  className='w-full flex gap-3 mt-3 p-2 flex-col '>
           <div className='flex flex-col gap-2 w-full'>
             <label >
             Name
@@ -106,7 +104,7 @@ const SignupContext = () => {
           }
           <button disabled={loading} type='submit'  className='w-full p-2 mt-4 hover:bg-slate-800 active:bg-slate-800  text-gray-100 bg-slate-900 rounded-lg '>
             {
-              loading ? <Loader size={25} className='animate-spin' /> : "Sign Up"
+              loading ? <Loader size={25} className='animate-spin mx-auto' /> : "Sign Up"
             }
           </button>
           <div className='my-5  flex items-center justify-center text-blue-700 gap-2'>
