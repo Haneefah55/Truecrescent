@@ -3,7 +3,7 @@ import { addProduct } from '@/actions/products.action'
 import { Loader } from 'lucide-react'
 import { set } from 'mongoose'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useState, useTransition } from 'react'
 import { toast } from 'sonner'
 import { string } from 'zod'
 
@@ -13,6 +13,7 @@ const AddProductForm = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [description, setDescription] = useState("")
+  const [isPending, startTransition] = useTransition()
 
   const maxLength = 500
 
@@ -86,14 +87,15 @@ const AddProductForm = () => {
   }
 
   const handleSubmit = async(formData: FormData) => {
-    try {
-      setLoading(true)
 
+    startTransition(async() => {
+       try {
       const imagesUrl = await uploadImages(images)
       console.log("urls", imagesUrl)
 
       if(imagesUrl.length === 0) {
-        setError("Failed to upload images. Please try again.")
+        setError("At least one image is required. Please try again.")
+        setLoading(false)
         return
       }
 
@@ -104,37 +106,40 @@ const AddProductForm = () => {
 
 
       if(formData.get("name") === null || formData.get("description") === null || formData.get("category") === null || formData.getAll("imageUrls").length === 0 || formData.get("spec") === "") {
-      setError("Please fill all required fields")
-      return
-    }
+        setError("Please fill all required fields")
+        setLoading(false)
+        return
+      } 
+          /*     for(const pair of formData.entries()) {
+                console.log(pair[0], pair[1])
+              }  */
+              //console.log("formData", formData)
+      const res = await addProduct(formData)
 
-    
-    setError("")
-    
-/*     for(const pair of formData.entries()) {
-      console.log(pair[0], pair[1])
-    }  */
-    //console.log("formData", formData)
-    const res = await addProduct(formData)
-    
-    setLoading(false)
+      if(res.error) {
+        setError(res?.error)
+        setLoading(false)
+        
 
-    if(res?.success) {
+      } 
+
       toast.success(res?.message)
-    } else {
-      console.log(res?.message)
-      toast.error(res?.message || "Failed to add product")
-    }
+      setTimeout(() => {
+        router.push('/admin/products')
+      }, 2500);
+    
       
-    } catch (error: any) {
-      console.log(error.message)
-      toast.error((error as Error).message || "Failed to add product")
-    }
+      } catch (error: any) {
+        console.log(error.message)
+        toast.error(error.message || "Failed to add product")
+      }
+
+    })
+   
+    
     
 
-    setTimeout(() => {
-      router.push('/admin/products')
-    }, 3500)
+    
   }
 
   const removeImage = (index: number) => {
@@ -193,11 +198,12 @@ const AddProductForm = () => {
               <p className='font-semibold'>Category</p>
               <select name="category" className='border p-2 rounded-md bg-white placeholder:text-gray-500'>
                 <option value="">Select category</option>
-                <option value="steel-and-structural-materials">Steel & Structural Materials</option>
-                <option value="scaffolding-and-formwork-materials">Scaffolding & Formwork Materials</option>
-                <option value="roofing-and-timber">Roofing & Timber</option>
-                <option value="fasteners-and-accessories">Fasteners & Accessories</option>
-                <option value="pipes-and-fittings">Pipes & Fittings</option>
+                <option value="Steel and Structural Materials">Steel & Structural Materials</option>
+                <option value="Stainless Steel Materials">Stainless Steel Materials</option>
+                <option value="Scaffolding and Formwork Materials">Scaffolding & Formwork Materials</option>
+                <option value="Welding Consumables">Welding consumables</option>
+                <option value="Paints">Paint</option>
+                <option value="pipes and Accessories">Pipes & Accessories</option>
               </select>
             </div>
             
@@ -224,8 +230,8 @@ const AddProductForm = () => {
             Cancel
           </button>
 
-          <button type='submit' className='bg-blue-600 cursor-pointer text-white py-2 rounded-md hover:bg-blue-700 w-32 self-end disabled:opacity-50' disabled={loading}>
-            {loading ? <Loader size={25} className='animate-spin mx-auto' /> : "Add Product"}
+          <button type='submit' className='bg-blue-600 cursor-pointer text-white py-2 rounded-md hover:bg-blue-700 w-32 self-end disabled:bg-gray-500 disabled:cursor-not-allowed' disabled={isPending}>
+            {isPending ? <Loader size={25} className='animate-spin mx-auto' /> : "Add Product"}
           </button>
           
         </div>

@@ -7,13 +7,20 @@ import { FaChevronLeft } from 'react-icons/fa'
 import { FaChevronRight } from 'react-icons/fa6'
 
 const CategoryCarousel = () => {
+  const slug = (name: string) => {
+    const slugname= name.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")
+
+    return slugname
+  }
 
   const categories = [
-    { name: "Steel & Structural Materials", href: '/category/steel-and-structural-materials', img: '/images/cat1.jpg' },
-    { name: "Scaffolding & Formwork Materials", href: '/category/scaffolding-and-formwork-materials', img: '/images/cat2.jpg' },
-    { name: "Roofing & Timber", href: '/category/roofing-and-timber', img: '/images/cat3.jpg'},
-    { name: "Pipes & Fittings", href: '/category/pipes-and-fittings', img: '/images/cat4.avif'},
-    { name: "Fasteners & Accessories", href: '/category/fasteners-and-accessories', img: '/images/cat5.webp'},
+    { name: "Steel & Structural Materials", img: '/images/cat1.jpg' },
+    { name: "Scaffolding & Formwork Materials", img: '/images/cat2.jpg' },
+    { name: "Stainless Steel Materials", img: '/images/cat3.jpg'},
+    { name: "Pipes & Accessories", img: '/images/cat4.avif'},
+    { name: "Welding Consumables", img: '/images/cat4.avif'},
+    { name: "Paint", img: '/images/cat4.avif'},
+  
   ]
 
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -34,11 +41,11 @@ const CategoryCarousel = () => {
     <div className="bg-gray-100 pt-5 pb-16 px-4   w-full flex items-center justify-center  ">
       
       <div className='w-full relative max-w-5xl flex flex-col gap-4'>
-        <h3 className='font-semibold self-start text-xl ml-3  md:text-2xl'>Explore Our Steel Categories</h3>
+        <h3 className='font-semibold self-start text-xl ml-3  md:text-2xl'>Explore Our Products Categories</h3>
         <div ref={scrollRef} className="flex gap-4 overflow-x-auto px-4 snap-mandatory scroll-smooth scrollbar-hide">
         {
           categories.map((cat) => (
-            <Link href={cat.href} key={cat.name} >
+            <Link href={`/products/category/${slug(cat.name)}`} key={cat.name} >
               <div className='relative w-62.5 h-45 shadow-md overflow-hidden group cursor-pointer'>
                 <Image
                   src={cat.img}

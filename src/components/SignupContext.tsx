@@ -25,6 +25,12 @@ const SignupContext = () => {
     const email= formData.get("email") as string
     const password= formData.get("password") as string
 
+    if(!email || !password || !name){
+      setError("All fields are required")
+      setLoading(false)
+      return
+    }
+
     
     const result = await signUp(email, password, name)
     console.log("signup res", result)
@@ -75,20 +81,20 @@ const SignupContext = () => {
             <label >
             Name
           </label>
-          <input name='name' type='text' className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your name'/>
+          <input name='name' type='text' required className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your name'/>
           </div>
           <div className='flex flex-col gap-2 w-full'>
             <label >
             Email Address
           </label>
-          <input name='email' type='email' className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your mail'/>
+          <input name='email' required type='email' className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your mail'/>
           </div>
           <div className='flex flex-col gap-2 w-full'>
             <label >
             Password
           </label>
           <div className='w-full flex relative '>
-            <input name='password' type={`${showPassword ? "text" : "password"}`} className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter password'/>
+            <input name='password' required type={`${showPassword ? "text" : "password"}`} className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter password'/>
              
               {
                 showPassword ? (<Eye size={20}  className='absolute top-2 right-2' onClick={() => setShowPassword(false)}/>) :

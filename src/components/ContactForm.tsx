@@ -75,21 +75,21 @@ const ContactForm = ({ user }: { user:any }) => {
         <label className='font-semibold'>
           Name
         </label>
-        <input name='name' type='text' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='Your name' />
+        <input name='name' required type='text' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='Your name' />
       </div>
 
       <div className='flex flex-col gap-1'>
         <label className='font-semibold'>
           Email Address
         </label>
-        <input name='email' type='email' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='you@example.com' />
+        <input name='email' required type='email' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='you@example.com' />
       </div>
 
       <div className='flex flex-col gap-1'>
         <label className='font-semibold'>
           Phone Number
         </label>
-        <input name='phone' type='text' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='+23490000000' />
+        <input name='phone' required type='text' className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='+23490000000' />
       </div>
 
       <div className='flex flex-col gap-1'>
@@ -97,7 +97,7 @@ const ContactForm = ({ user }: { user:any }) => {
           Subject
         </label>
         
-        <select name="subject"  value={subjectSelected} onChange={(e) => setSubjectSelected(e.target.value)} className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500'>
+        <select name="subject" required  value={subjectSelected} onChange={(e) => setSubjectSelected(e.target.value)} className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500'>
           <option value="">Select a subject</option>
 
           {subjects.map((subject) => (
@@ -115,7 +115,7 @@ const ContactForm = ({ user }: { user:any }) => {
         <label className='font-semibold'>
           Message
         </label>
-        <textarea name='message'  className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='Type your message here'></textarea>
+        <textarea name='message' required  className='w-full flex px-3 py-2 rounded-lg border-2 border-gray-300 focus:border-gray-500 placeholder:text-gray-500' placeholder='Type your message here'></textarea>
       </div>
       {
         error &&

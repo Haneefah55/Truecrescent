@@ -98,7 +98,7 @@ export default function Home() {
 
       {/*  value propositions  */}
       <div className="bg-gray-100 py-10 flex items-center justify-center flex-col" >
-        <h2 className="text-xl md:text-2xl font-semibold mb-4">Building & Construction Materials Magnate</h2>
+        <h2 className="text-xl md:text-2xl text-center px-2 font-semibold mb-4">Building & Construction Materials Magnate</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <div className="w-35 h-35 bg-orange-600 text-white p-2 flex flex-col items-center justify-center gap-3 hover:bg-orange-700 focus:bg-orange-700 transition duration-300 ">
             <HiBadgeCheck  size={35} color="white" />

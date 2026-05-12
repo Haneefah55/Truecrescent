@@ -8,7 +8,7 @@ interface SidebarStore {
 }
 
 export const useSidebarStore = create<SidebarStore>((set, get) => ({
-  isOpen: true,
+  isOpen: false,
 
   toggle: () => set((state) => ({ isOpen: !state.isOpen })),
   setIsOpen: (isMobile) => {

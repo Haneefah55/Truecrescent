@@ -14,6 +14,10 @@ const productSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  price: {
+    type: Number,
+    default: 0,
+  },
   imagePublicIds: {
     type: [String],
     default: [],
@@ -41,6 +45,8 @@ const productSchema = new mongoose.Schema({
     },
 
   ],
+  nameSlug: String,
+  categorySlug: String,
   category: {
     type: String,
     required: true,

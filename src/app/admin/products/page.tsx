@@ -1,8 +1,10 @@
 import ProductTable from '@/components/ProductTable'
+import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
 import React from 'react'
 
 const AdminProductsPage = () => {
+  
   return (
     <div className='w-full  '>
       <div className='w-full bg-gray-100 shadow-md mb-3 flex flex-col sm:flex-row p-3 gap-5 justify-between'>
@@ -21,6 +23,7 @@ const AdminProductsPage = () => {
 
 
       </div>
+
       <ProductTable />
 
 

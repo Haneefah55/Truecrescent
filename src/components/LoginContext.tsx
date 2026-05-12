@@ -21,6 +21,11 @@ const LoginContext = () => {
     setError("")
     const email= formData.get("email") as string
     const password= formData.get("password") as string
+    if(!email || !password){
+      setError("All fields are required")
+      setLoading(false)
+      return
+    }
 
     const result = await signIn(email, password)
   
@@ -74,14 +79,14 @@ const LoginContext = () => {
             <label >
             Email Address
           </label>
-          <input name='email' type='email' className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your mail'/>
+          <input name='email' required type='email' className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your mail'/>
           </div>
           <div className='flex flex-col gap-2 w-full'>
             <label >
             Password
           </label>
           <div className='w-full flex relative '>
-            <input name='password' type={`${showPassword ? "text" : "password"}`} className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your password'/>
+            <input name='password' required type={`${showPassword ? "text" : "password"}`} className='w-full p-2 bg-gray-200 focus:border-2 border-slate-900 placeholder:text-gray-900 rounded-lg ' placeholder='Enter your password'/>
              
               {
                 showPassword ? (<Eye size={20}  className='absolute top-2 right-2' onClick={() => setShowPassword(false)}/>) :

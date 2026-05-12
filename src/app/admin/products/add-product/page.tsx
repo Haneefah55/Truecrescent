@@ -22,7 +22,6 @@ const AddProductPage = () => {
             <Link href={'/admin/products/add-product'}> Add Product
             </Link>
 
-
           </div>
 
         </div>
