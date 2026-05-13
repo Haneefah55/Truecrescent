@@ -136,10 +136,6 @@ const AddProductForm = () => {
 
     })
    
-    
-    
-
-    
   }
 
   const removeImage = (index: number) => {
@@ -194,6 +190,11 @@ const AddProductForm = () => {
             </div>
           </div>
           <div className='flex flex-col sm:flex-row gap-5'>
+            <div>
+              <p className='font-semibold'>Price <span className='text-gray-600 ml-2 '>₦</span></p>
+              <input type="number" name='price' className='border p-2 rounded-md bg-white placeholder:text-gray-500' placeholder='Enter product specification' />
+            </div>
+
             <div>
               <p className='font-semibold'>Category</p>
               <select name="category" className='border p-2 rounded-md bg-white placeholder:text-gray-500'>

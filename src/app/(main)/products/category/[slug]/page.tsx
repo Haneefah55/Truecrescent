@@ -2,7 +2,45 @@
 
 import { getProductByCategory } from '@/actions/products.action'
 import ProductCard from '@/components/products/ProductCard'
+import { Metadata } from 'next'
 import React from 'react'
+
+export async function generateMetadata({ 
+  params }: 
+  {params: Promise<{slug: string}>}): 
+  Promise<Metadata> {
+
+    const { slug } = await params
+    const result = await getProductByCategory(slug)
+    const products = result?.products
+    const category = result?.categoryName
+
+  const cateSlug = slug.replace(/-/g, " ").replace(/&/g, "and")
+
+    if(!category) {
+      return {
+        title: "Category Not Found"
+      }
+    }
+
+    return {
+      title: category,
+      description: `Explore high-quality ${category} products for construction and industrial use`,
+
+      openGraph: {
+        title: category,
+        description:  `Explore high-quality ${category} products for construction and industrial use`,
+        images: products[0].imageUrls[0] ? [products[0].imageUrls[0]] : []
+      },
+      alternates: {
+        canonical: `https://truecrescent.com.ng/products/category/${cateSlug}`
+      }
+    }
+
+
+}
+
+
 type Product={
   name: string,
   images: [string],
@@ -22,8 +60,8 @@ type Product={
 
 }
 
-const ProductcategoryPage = async({ params }: {params: {slug: string}}) => {
-  const slug = params.slug
+const ProductcategoryPage = async({ params }: {params: Promise<{slug: string}>}) => {
+  const { slug } = await params
   const result = await getProductByCategory(slug)
   
 

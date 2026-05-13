@@ -69,9 +69,9 @@ const AllProductsPageContext = () => {
   }, [pageNum])
 
   return (
-    <div className='w-full mt-10'>
+    <div className='w-full mt-10 flex flex-col'>
       
-      <div className='w-full max-w-5xl flex mt-5 items-center justify-center px-5 flex-col '>
+      <div className='w-full max-w-5xl flex border self-center mx-auto mt-5 items-center justify-center px-5 flex-col '>
         <p className='text-lg font-semibold mb-5 text-center'>Browse by category</p>
         <div className='flex items-center justify-center gap-4 flex-wrap'>
           {
@@ -87,6 +87,7 @@ const AllProductsPageContext = () => {
 
 
       </div>
+
       <h3 className='text-2xl md:text-3xl font-semibold my-10 text-center'>All Products</h3>
       <div className='w-full max-w-5xl flex mt-5 items-center justify-center px-5'>
         <div className='flex items-center justify-center'>

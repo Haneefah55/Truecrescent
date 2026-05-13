@@ -1,8 +1,12 @@
 "use server"
 
+import { auth } from "@/lib/auth"
 import cloudinary from "@/lib/cloudinary"
 import { connectDb } from "@/lib/connectDb"
 import Product from "@/models/product.model"
+import User from "@/models/user.model"
+import mongoose from "mongoose"
+import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 
 function generateSKU(name: string, category: string) {
@@ -36,9 +40,11 @@ export const addProduct = async(formData: FormData) =>{
     const category= formData.get("category") as string
     const imageUrls= formData.getAll("imageUrls") as [string]
     const imagePublicIds= formData.getAll("imagePublicIds") as [string]
+    const price = formData.get("price") as string
     
     const nameSlug = slug(name)
     const categorySlug = slug(category)
+    
     
     
     const exsiting = await Product.findOne({ name })
@@ -56,7 +62,8 @@ export const addProduct = async(formData: FormData) =>{
       imageUrls,
       imagePublicIds,
       nameSlug,
-      categorySlug
+      categorySlug,
+      price: parseInt(price)
         
     })
     console.log("product added successfully")
@@ -207,7 +214,7 @@ export const getProduct = async(nameSlug: string) =>{
     
 
     const product = await Product.findOne({ nameSlug: nameSlug  })
-    console.log(product)
+    //console.log(product)
     
     return  JSON.parse(JSON.stringify(product))
     
@@ -215,4 +222,116 @@ export const getProduct = async(nameSlug: string) =>{
     console.error("Error in getProduct action", error.message);
     
   }
+}
+
+export const getProductReview = async(id: string) =>{
+  try {
+  
+
+    const productReviews = await Product.findOne(
+      { _id: id },
+      { review: 1, _id: 0 }
+    )
+
+    if(productReviews){
+
+      const totalReviews = await Product.aggregate([
+        {
+          $match: {
+            _id: mongoose.Types.ObjectId.createFromHexString(id)
+          }
+        }, 
+        
+        {
+          $project: {
+            name: 1,
+            review: { $size: "$review" }, 
+            _id: 0
+          }
+
+        }
+      ])
+
+      const { review } = totalReviews[0] ||  0 
+
+
+      const productRatings = await Product.aggregate([
+        {
+          $match: {
+            _id: mongoose.Types.ObjectId.createFromHexString(id)
+          }
+        }, 
+        
+        {
+          $project: {
+            _id: 0,
+            totalRatings: { $size: "$review" }, 
+            averageRating: { $avg: "$review.ratings" }
+          }
+
+        }
+      ])
+
+      const { totalRatings, averageRating } = productRatings[0] || { totalRatings: 0, averageRating: 0 }
+
+      const result= { totalRatings, averageRating, review, productReviews  }
+      console.log("get review ", result)
+
+      return JSON.parse(JSON.stringify(result))
+    } 
+    return
+
+    
+  } catch (error: any) {
+    console.error("Error in getProductReview contoller", error.message);
+  }
+}
+
+
+export const createProductReview = async(comment: string, ratings: number, id: string) =>{
+
+  try {
+
+    const session = await auth.api.getSession({
+      headers: await headers()
+    })
+    
+    if(!session){
+      return { message: "Please login to continue" , success: false, review: null }
+    }
+ 
+    const product = await Product.findById(id)
+
+    if(!product){
+      return { message: "Product not found", success: false, review: null }
+    }
+
+    const newReview ={
+      user: session.user.id,
+      name: session.user.name,
+      comment,
+      ratings,
+    }
+
+    product.review.push(newReview)
+
+    await product.save()
+
+    console.log("product review created successfully")
+
+    const review= JSON.parse(JSON.stringify(product.review))
+
+    return { review, message: "product review created successfully", success: true }
+
+  } catch (error: any) {
+    
+    console.error("Error in createProductReview contoller", error.message);
+    return {message: error.message || "Error creating review", success: false, review: null}
+  }
+  
+
+
+  
+
+  
 }

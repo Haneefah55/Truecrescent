@@ -96,10 +96,10 @@ const DesktopTable = () => {
               </td>
               
               <td className=' p-2 '>
-                <Link href={`/products/${slug(product?.name)}`} className='font-semibold text-sm'>{product?.name}</Link>
+                <Link href={`/products/${slug(product?.name)}`} className='font-semibold'>{product?.name}</Link>
               </td>
               <td className=' p-2'>
-                <Link href={`/products/category/${slug(product?.category)}`} className='text-xs text-gray-500'>
+                <Link href={`/products/category/${slug(product?.category)}`} className=''>
                   {product?.category}
                 </Link>
 
