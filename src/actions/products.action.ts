@@ -197,7 +197,7 @@ export const getProductByCategory = async(category: string) =>{
     
 
     const products = await Product.find({ categorySlug: category  })
-    console.log(products)
+    //console.log(products)
     
     return { products: JSON.parse(JSON.stringify(products)), categoryName: products[0]?.category || "" }
     

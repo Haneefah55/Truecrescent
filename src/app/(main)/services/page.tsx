@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'True Crescent',
     images: [
       {
-        url: '/og-image.png',
+        url: '/bg2.jpeg',
         width: 1200,
         height: 630,
         alt: 'True Crescent Steel Building Materials',
@@ -89,7 +89,7 @@ const ServicesPage = () => {
   return (
     <div className='w-full bg-gray-50 overflow-x-hidden'>
        {/* hero */}
-      <div  className="w-full h-screen md:h-96 relative bg-no-repeat bg-cover" style={{ backgroundImage: `url(${'/images/reinforced-bar.jpg'})` }}>
+      <div  className="w-full h-screen md:h-96 relative bg-no-repeat bg-center" style={{ backgroundImage: `url(${'/images/bg2.jpeg'})` }}>
       <div className='absolute bg-black/60 inset-0 flex flex-col pt-24 px-6'>
         <Link href={'/'} className='text-gray-100 mt-5 ml-5 md:ml-14 font-light hover:text-orange-600 active:text-orange-600'>
         Home/Services

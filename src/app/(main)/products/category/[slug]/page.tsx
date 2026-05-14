@@ -74,7 +74,7 @@ const ProductcategoryPage = async({ params }: {params: Promise<{slug: string}>})
 
   
   return (
-    <div className='w-full mt-30'>
+    <div className='w-full mt-30 flex flex-col items-center justify-center'>
       
       <h3 className='text-2xl md:text-3xl capitalize font-semibold my-10 text-center'>{category || cateSlug } Category</h3>
       <div className='w-full max-w-5xl flex mt-5 items-center justify-center px-5'>
@@ -85,7 +85,7 @@ const ProductcategoryPage = async({ params }: {params: Promise<{slug: string}>})
             No product found in this category
           </div>
         }
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center self-center'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
           {
             products?.map((product: Product) => (
